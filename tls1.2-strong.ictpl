@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-16"?>
 <iisCryptoTemplate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="0">
   <header>
-    <name>Strong TLS 1.2</name>
-    <author>Nicolas Simond</author>
-    <lastUpdated>2016-07-26T11:22:18.4882748Z</lastUpdated>
-    <description>Apply extremely strong TLS configuration. TLS 1.2 with A+ Grade on SSLlabs.</description>
+    <name>Strong TLS 1.1-1.2</name>
+    <author>Brian Carroll</author>
+    <lastUpdated>2018-07-09T17:45:45.5894303Z</lastUpdated>
+    <description>Apply extremely strong TLS configuration. TLS1.1 left enabled.</description>
     <builtIn>false</builtIn>
   </header>
   <schannel setClientProtocols="true">
@@ -23,7 +23,7 @@
       <schannelItem name="SSL 2.0" state="Disabled" />
       <schannelItem name="SSL 3.0" state="Disabled" />
       <schannelItem name="TLS 1.0" state="Disabled" />
-      <schannelItem name="TLS 1.1" state="Disabled" minimumOSVersion="Windows2008R2" />
+      <schannelItem name="TLS 1.1" state="Enabled" minimumOSVersion="Windows2008R2" />
       <schannelItem name="TLS 1.2" state="Enabled" minimumOSVersion="Windows2008R2" />
     </serverProtocols>
     <ciphers>
@@ -42,7 +42,7 @@
     </ciphers>
     <hashes>
       <schannelItem name="MD5" state="Disabled" />
-      <schannelItem name="SHA" state="Enabled" />
+      <schannelItem name="SHA" state="Disabled" />
       <schannelItem name="SHA 256" state="Enabled" minimumOSVersion="Windows2008R2" />
       <schannelItem name="SHA 384" state="Enabled" minimumOSVersion="Windows2008R2" />
       <schannelItem name="SHA 512" state="Enabled" minimumOSVersion="Windows2008R2" />
@@ -58,8 +58,8 @@
     <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256" state="Enabled" />
     <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384" state="Enabled" />
     <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256" state="Enabled" />
-    <cipherSuiteItem name="TLS_RSA_WITH_AES_256_GCM_SHA384" state="Enabled" />
-    <cipherSuiteItem name="TLS_RSA_WITH_AES_128_GCM_SHA256" state="Enabled" />
+    <cipherSuiteItem name="TLS_RSA_WITH_AES_256_GCM_SHA384" state="Disabled" />
+    <cipherSuiteItem name="TLS_RSA_WITH_AES_128_GCM_SHA256" state="Disabled" />
     <cipherSuiteItem name="TLS_DHE_RSA_WITH_AES_256_GCM_SHA384" state="Disabled" />
     <cipherSuiteItem name="TLS_DHE_RSA_WITH_AES_128_GCM_SHA256" state="Disabled" />
     <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384" state="Enabled" />
@@ -68,12 +68,12 @@
     <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256" state="Enabled" />
     <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA" state="Enabled" />
     <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA" state="Enabled" />
-    <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA" state="Enabled" />
-    <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA" state="Enabled" />
-    <cipherSuiteItem name="TLS_RSA_WITH_AES_256_CBC_SHA256" state="Enabled" />
-    <cipherSuiteItem name="TLS_RSA_WITH_AES_128_CBC_SHA256" state="Enabled" />
-    <cipherSuiteItem name="TLS_RSA_WITH_AES_256_CBC_SHA" state="Enabled" />
-    <cipherSuiteItem name="TLS_RSA_WITH_AES_128_CBC_SHA" state="Enabled" />
+    <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA" state="Disabled" />
+    <cipherSuiteItem name="TLS_RSA_WITH_AES_256_CBC_SHA256" state="Disabled" />
+    <cipherSuiteItem name="TLS_RSA_WITH_AES_128_CBC_SHA256" state="Disabled" />
+    <cipherSuiteItem name="TLS_RSA_WITH_AES_256_CBC_SHA" state="Disabled" />
+    <cipherSuiteItem name="TLS_RSA_WITH_AES_128_CBC_SHA" state="Disabled" />
     <cipherSuiteItem name="TLS_RSA_WITH_3DES_EDE_CBC_SHA" state="Disabled" />
     <cipherSuiteItem name="TLS_DHE_DSS_WITH_AES_256_CBC_SHA256" state="Disabled" />
     <cipherSuiteItem name="TLS_DHE_DSS_WITH_AES_128_CBC_SHA256" state="Disabled" />
@@ -86,5 +86,23 @@
     <cipherSuiteItem name="TLS_RSA_WITH_NULL_SHA" state="Disabled" />
     <cipherSuiteItem name="SSL_CK_DES_192_EDE3_CBC_WITH_MD5" state="Disabled" />
     <cipherSuiteItem name="SSL_CK_RC4_128_WITH_MD5" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P256" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256_P384" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256_P384" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P384" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA_P256" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA_P384" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA_P256" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA_P384" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384_P384" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256_P256" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384_P384" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256_P256" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA_P256" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA_P384" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA_P256" state="Disabled" />
+    <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA_P384" state="Disabled" />
   </cipherSuites>
 </iisCryptoTemplate>
