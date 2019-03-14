@@ -4,7 +4,7 @@
     <name>Strong TLS 1.1-1.2</name>
     <author>Brian Carroll</author>
     <lastUpdated>2018-07-09T17:45:45.5894303Z</lastUpdated>
-    <description>Apply extremely strong TLS configuration. TLS1.1 left enabled.</description>
+    <description>Apply extremely strong TLS configuration. TLS1.2 Only</description>
     <builtIn>false</builtIn>
   </header>
   <schannel setClientProtocols="true">
