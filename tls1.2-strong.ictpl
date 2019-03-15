@@ -23,7 +23,7 @@
       <schannelItem name="SSL 2.0" state="Disabled" />
       <schannelItem name="SSL 3.0" state="Disabled" />
       <schannelItem name="TLS 1.0" state="Disabled" />
-      <schannelItem name="TLS 1.1" state="Disabled" />
+      <schannelItem name="TLS 1.1" state="Disabled" minimumOSVersion="Windows2008R2" />
       <schannelItem name="TLS 1.2" state="Enabled" minimumOSVersion="Windows2008R2" />
     </serverProtocols>
     <ciphers>
