@@ -1,96 +1,63 @@
-<?xml version="1.0" encoding="utf-16"?>
-<iisCryptoTemplate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="0">
+<?xml version="1.0" encoding="utf-8"?>
+<iisCryptoTemplate version="3">
   <header>
-    <name>Strong TLS 1.1-1.2</name>
+    <name>Strong TLS 1.2</name>
     <author>Brian Carroll</author>
-    <lastUpdated>2018-07-09T17:45:45.5894303Z</lastUpdated>
+    <lastUpdated>2019-03-15T18:00:03.3368705Z</lastUpdated>
     <description>Apply extremely strong TLS configuration. TLS1.2 Only</description>
     <builtIn>false</builtIn>
   </header>
-  <schannel setClientProtocols="true">
+  <schannel>
     <clientProtocols>
-      <schannelItem name="Multi-Protocol Unified Hello" state="Disabled" />
-      <schannelItem name="PCT 1.0" state="Disabled" />
-      <schannelItem name="SSL 2.0" state="Disabled" />
-      <schannelItem name="SSL 3.0" state="Disabled" />
-      <schannelItem name="TLS 1.0" state="Enabled" />
-      <schannelItem name="TLS 1.1" state="Enabled" minimumOSVersion="Windows2008R2" />
-      <schannelItem name="TLS 1.2" state="Enabled" minimumOSVersion="Windows2008R2" />
+      <templateItem name="Multi-Protocol Unified Hello" value="0" />
+      <templateItem name="PCT 1.0" value="0" />
+      <templateItem name="SSL 2.0" value="0" />
+      <templateItem name="SSL 3.0" value="0" />
+      <templateItem name="TLS 1.0" value="-1" />
+      <templateItem name="TLS 1.1" value="-1" minimumOSVersion="Windows2008R2" />
+      <templateItem name="TLS 1.2" value="-1" minimumOSVersion="Windows2008R2" />
     </clientProtocols>
     <serverProtocols>
-      <schannelItem name="Multi-Protocol Unified Hello" state="Disabled" />
-      <schannelItem name="PCT 1.0" state="Disabled" />
-      <schannelItem name="SSL 2.0" state="Disabled" />
-      <schannelItem name="SSL 3.0" state="Disabled" />
-      <schannelItem name="TLS 1.0" state="Disabled" />
-      <schannelItem name="TLS 1.1" state="Disabled" minimumOSVersion="Windows2008R2" />
-      <schannelItem name="TLS 1.2" state="Enabled" minimumOSVersion="Windows2008R2" />
+      <templateItem name="Multi-Protocol Unified Hello" value="0" />
+      <templateItem name="PCT 1.0" value="0" />
+      <templateItem name="SSL 2.0" value="0" />
+      <templateItem name="SSL 3.0" value="0" />
+      <templateItem name="TLS 1.0" value="0" />
+      <templateItem name="TLS 1.1" value="0" minimumOSVersion="Windows2008R2" />
+      <templateItem name="TLS 1.2" value="-1" minimumOSVersion="Windows2008R2" />
     </serverProtocols>
     <ciphers>
-      <schannelItem name="NULL" state="Disabled" />
-      <schannelItem name="DES 56/56" state="Disabled" />
-      <schannelItem name="RC2 40/128" state="Disabled" />
-      <schannelItem name="RC2 56/128" state="Disabled" />
-      <schannelItem name="RC2 128/128" state="Disabled" />
-      <schannelItem name="RC4 40/128" state="Disabled" />
-      <schannelItem name="RC4 56/128" state="Disabled" />
-      <schannelItem name="RC4 64/128" state="Disabled" />
-      <schannelItem name="RC4 128/128" state="Disabled" />
-      <schannelItem name="Triple DES 168" state="Enabled" />
-      <schannelItem name="AES 128/128" state="Enabled" />
-      <schannelItem name="AES 256/256" state="Enabled" />
+      <templateItem name="NULL" value="0" />
+      <templateItem name="DES 56/56" value="0" />
+      <templateItem name="RC2 40/128" value="0" />
+      <templateItem name="RC2 56/128" value="0" />
+      <templateItem name="RC2 128/128" value="0" />
+      <templateItem name="RC4 40/128" value="0" />
+      <templateItem name="RC4 56/128" value="0" />
+      <templateItem name="RC4 64/128" value="0" />
+      <templateItem name="RC4 128/128" value="0" />
+      <templateItem name="Triple DES 168" value="-1" />
+      <templateItem name="AES 128/128" value="-1" />
+      <templateItem name="AES 256/256" value="-1" />
     </ciphers>
     <hashes>
-      <schannelItem name="MD5" state="Enabled" />
-      <schannelItem name="SHA" state="Enabled" />
-      <schannelItem name="SHA 256" state="Enabled" minimumOSVersion="Windows2008R2" />
-      <schannelItem name="SHA 384" state="Enabled" minimumOSVersion="Windows2008R2" />
-      <schannelItem name="SHA 512" state="Enabled" minimumOSVersion="Windows2008R2" />
+      <templateItem name="MD5" value="-1" />
+      <templateItem name="SHA" value="-1" />
+      <templateItem name="SHA 256" value="-1" minimumOSVersion="Windows2008R2" />
+      <templateItem name="SHA 384" value="-1" minimumOSVersion="Windows2008R2" />
+      <templateItem name="SHA 512" value="-1" minimumOSVersion="Windows2008R2" />
     </hashes>
     <keyExchanges>
-      <schannelItem name="Diffie-Hellman" state="Enabled" />
-      <schannelItem name="PKCS" state="Enabled" />
-      <schannelItem name="ECDH" state="Enabled" />
+      <templateItem name="Diffie-Hellman" value="-1" />
+      <templateItem name="PKCS" value="-1" />
+      <templateItem name="ECDH" value="-1" />
     </keyExchanges>
   </schannel>
+  <advanced>
+    <templateItem name="DHE Minimum Key Length" value="2048" />
+    <templateItem name="FIPS Algorithm Policy" value="0" />
+  </advanced>
   <cipherSuites>
-    <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384" state="Enabled" />
-    <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256" state="Enabled" />
-    <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384" state="Enabled" />
-    <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256" state="Enabled" />
-    <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA" state="Enabled" />
-    <cipherSuiteItem name="TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA" state="Enabled" />
-    <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384" state="Enabled" />
-    <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256" state="Enabled" />
-    <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384" state="Enabled" />
-    <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256" state="Enabled" />
-    <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA" state="Enabled" />
-    <cipherSuiteItem name="TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA" state="Enabled" />
-    <cipherSuiteItem name="TLS_RSA_WITH_AES_256_GCM_SHA384" state="Disabled" />
-    <cipherSuiteItem name="TLS_RSA_WITH_AES_128_GCM_SHA256" state="Disabled" />
-    <cipherSuiteItem name="TLS_RSA_WITH_AES_256_CBC_SHA256" state="Disabled" />
-    <cipherSuiteItem name="TLS_RSA_WITH_AES_128_CBC_SHA256" state="Disabled" />
-    <cipherSuiteItem name="TLS_RSA_WITH_AES_256_CBC_SHA" state="Disabled" />
-    <cipherSuiteItem name="TLS_RSA_WITH_AES_128_CBC_SHA" state="Disabled" />
-    <cipherSuiteItem name="TLS_DHE_RSA_WITH_AES_256_GCM_SHA384" state="Disabled" />
-    <cipherSuiteItem name="TLS_DHE_RSA_WITH_AES_128_GCM_SHA256" state="Disabled" />
-    <cipherSuiteItem name="TLS_DHE_RSA_WITH_AES_256_CBC_SHA" state="Disabled" />
-    <cipherSuiteItem name="TLS_DHE_RSA_WITH_AES_128_CBC_SHA" state="Disabled" />
-    <cipherSuiteItem name="TLS_RSA_WITH_3DES_EDE_CBC_SHA" state="Disabled" />
-    <cipherSuiteItem name="TLS_DHE_DSS_WITH_AES_256_CBC_SHA256" state="Disabled" />
-    <cipherSuiteItem name="TLS_DHE_DSS_WITH_AES_128_CBC_SHA256" state="Disabled" />
-    <cipherSuiteItem name="TLS_DHE_DSS_WITH_AES_256_CBC_SHA" state="Disabled" />
-    <cipherSuiteItem name="TLS_DHE_DSS_WITH_AES_128_CBC_SHA" state="Disabled" />
-    <cipherSuiteItem name="TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA" state="Disabled" />
-    <cipherSuiteItem name="TLS_RSA_WITH_RC4_128_SHA" state="Disabled" />
-    <cipherSuiteItem name="TLS_RSA_WITH_RC4_128_MD5" state="Disabled" />
-    <cipherSuiteItem name="TLS_RSA_WITH_NULL_SHA256" state="Disabled" />
-    <cipherSuiteItem name="TLS_RSA_WITH_NULL_SHA" state="Disabled" />
-    <cipherSuiteItem name="TLS_PSK_WITH_AES_256_GCM_SHA384" state="Disabled" />
-    <cipherSuiteItem name="TLS_PSK_WITH_AES_128_GCM_SHA256" state="Disabled" />
-    <cipherSuiteItem name="TLS_PSK_WITH_AES_256_CBC_SHA384" state="Disabled" />
-    <cipherSuiteItem name="TLS_PSK_WITH_AES_128_CBC_SHA256" state="Disabled" />
-    <cipherSuiteItem name="TLS_PSK_WITH_NULL_SHA384" state="Disabled" />
-    <cipherSuiteItem name="TLS_PSK_WITH_NULL_SHA256" state="Disabled" />
+    <templateItem name="Configured Cipher Suites" value="TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384_P384,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256_P384,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256_P256,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256" />
   </cipherSuites>
 </iisCryptoTemplate>
